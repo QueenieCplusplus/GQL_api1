@@ -69,6 +69,7 @@ https://expressjs.com/zh-tw/starter/generator.html
             // 使用中介軟體將 server 安裝在 app 同一路徑上
             // 引數為 app 輸出則為 server註冊者
             server.applyMiddleware({app});
+            //server.applyMiddleware({app, path: '/gql'}); 
             
   5. MongoDB
   
@@ -94,4 +95,6 @@ https://expressjs.com/zh-tw/starter/generator.html
             }).catch( err =>{
               console.log(err);
             });
+
+
 
