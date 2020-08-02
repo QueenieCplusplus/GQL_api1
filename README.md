@@ -1,5 +1,3 @@
-# GQL_api1
-
 # GQL_api
 Backend using express framework
 
