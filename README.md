@@ -126,3 +126,32 @@ Mongoose.Connect(url,...) 來讓 app 和 DB 建立連線，爾後將此 url 連�
          * DB_HOST = mogodb://<dbuser>:<dbpassword>@5555.mlab.com:5555/<db_name>
 
       (5) 確定 3 步驟成功後，建立一 context 物件，再次啟動服務，並且使用 dotenv 套件 load DB_HOST URL。
+
+# CodeBase
+
+      npm install mongodb
+      npm install dotenv
+
+      const { MongoClient } = require('mogodb')
+      require('dotenv').config()
+
+      // 建立 async func
+
+      async function start(){
+
+         const app = express();
+
+         const MONGO_DB = process.env.DB_HOST //本地端 mongodb 資料庫的主機位置
+
+         const client - await MongoClient.connect(
+
+             MONGO_DB,
+             {useNewUrlParser: true}
+
+         )
+         
+       }
+       
+       const db = client.db() // 在本機本地建立資料庫實例
+       
+       const context = {db} // 全域變數使用
