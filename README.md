@@ -75,4 +75,23 @@ https://expressjs.com/zh-tw/starter/generator.html
             const morgan = require('morgan');
             const mongoose = require('mongoose');
 
+            // morgan 
+            app.use(morgan('dev'));
+
+            // url path config
+            // process.env
+            let Mongo_PW = 'root';
+            let DATABASE_NAME = 'katesdb'
+            let url = 'mongodb://root'+ Mongo_PW + '@localhost:27017/' + DATABASE_NAME + '?authSource=admin';
+            console.log('DB name ' + DATABASE_NAME);
+
+            // mongoose
+            mongoose.connect(url, {
+              useUnifiedTopology: true,
+              useNewUrlParser: true
+            }).then(()=>{
+              console.log('DB connect')
+            }).catch( err =>{
+              console.log(err);
+            });
 
