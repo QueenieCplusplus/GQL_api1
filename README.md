@@ -134,6 +134,7 @@ Mongoose.Connect(url,...) 來讓 app 和 DB 建立連線，爾後將此 url 連�
 
       const { MongoClient } = require('mogodb')
       require('dotenv').config()
+      import {ApolloClient} from 'apollo-server-express'
 
       // 建立 async func
 
@@ -154,4 +155,12 @@ Mongoose.Connect(url,...) 來讓 app 和 DB 建立連線，爾後將此 url 連�
        
        const db = client.db() // 在本機本地建立資料庫實例
        
-       const context = {db} // 全域變數使用
+       const context = {db} // 全域變數使用 db 實例環境變數的資料庫主機
+       
+       const server = new ApolloServer({
+       
+            typDefs = 宣告一schema_gql,
+            resolvers = 宣告一解析函數,
+            context // 此全域變數裝載資料庫主機資訊
+       
+       })
