@@ -107,4 +107,22 @@ https://expressjs.com/zh-tw/starter/generator.html
               console.log(err);
             });
             
-            
+  6. DB_HOST URL ＆ context
+
+Mongoose.Connect(url,...) 來讓 app 和 DB 建立連線，爾後將此 url 連結加入 context。
+
+      (1) npm install mongo
+
+      (2) 修改 Apollo Server config file, index.js。
+
+      (3) 確定 mongodb server 和本地端連線成功，開始服務。
+
+      (4) 從系統內環境變數讀取（拉出）DB_HOST 資料庫主機資訊。
+
+         url 分成mongoDB本地端或是mlab沙河兩種：
+
+         * DB_HOST = mogodb://localhost://27017/<db_name>
+
+         * DB_HOST = mogodb://<dbuser>:<dbpassword>@5555.mlab.com:5555/<db_name>
+
+      (5) 確定 3 步驟成功後，建立一 context 物件，再次啟動服務，並且使用 dotenv 套件 load DB_HOST URL。
