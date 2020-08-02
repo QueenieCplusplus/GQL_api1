@@ -49,3 +49,31 @@ https://expressjs.com/zh-tw/starter/generator.html
       http://localhost:3000/
       
       http://localhost:4000/
+      
+4. apollo-server-express
+
+            const { ApolloServer } = require('apollo-server-express'); // server
+            const morgan = require('morgan');
+            const mongoose = require('mongoose');
+            // matter with apollo's typeDefs, 需要額外建立
+            const GQLSchema = require('./gql/schema/index');
+            // matter with apollo's resolver, 需要額外建立
+            const GQLResolver = require('/gql/resolver/Resolver');
+
+            var indexRouter = require('./routes/index');
+            var usersRouter = require('./routes/users');
+
+            var app = express(); // apps instance
+            const server = new ApolloServer({
+              typeDefs: GQLSchema, 
+              resolvers: GQLResolver,
+              engine: true,
+              context: async () => ({
+               mongo: await connectMongo()
+              }) // context 第二參數可加上 req 如 user: req.user
+
+            });
+
+// 使用中介軟體將 server 安裝在 app 同一路徑上
+// 引數為 app 輸出則為 server註冊者
+
