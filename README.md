@@ -65,6 +65,10 @@ https://expressjs.com/zh-tw/starter/generator.html
               }) // context 第二參數可加上 req 如 user: req.user
 
             });
+            
+            // 使用中介軟體將 server 安裝在 app 同一路徑上
+            // 引數為 app 輸出則為 server註冊者
+            server.applyMiddleware({app});
 
 
 
