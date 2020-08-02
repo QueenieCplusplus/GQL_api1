@@ -127,14 +127,14 @@ Mongoose.Connect(url,...) 來讓 app 和 DB 建立連線，爾後將此 url 連�
 
       (5) 確定 3 步驟成功後，建立一 context 物件，再次啟動服務，並且使用 dotenv 套件 load DB_HOST URL。
 
-# CodeBase
+# CodeBase for MongoDB + Express App + Apollo-Server-Express
 
       npm install mongodb
       npm install dotenv
 
       const { MongoClient } = require('mogodb')
       require('dotenv').config()
-      import {ApolloClient} from 'apollo-server-express'
+      import {ApolloClient} from 'apollo-boost'
 
       // 建立 async func
 
@@ -164,3 +164,21 @@ Mongoose.Connect(url,...) 來讓 app 和 DB 建立連線，爾後將此 url 連�
             context // 此全域變數裝載資料庫主機資訊
        
        })
+       
+       server.applyMiddleware({app})
+       
+       app.get('/',(req, res)=> res.end('hi there'))
+       
+       app.get('/playground', expressPlayground(
+         {endpoint:'/gql'}
+       ))
+       
+       app.listen({port: 4000}, ()=>
+       
+           console.log(
+           
+            'gql sever is running at http://localhost:4000${server.graphqlPath}'
+           
+           )
+       
+       )
