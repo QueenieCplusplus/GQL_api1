@@ -71,6 +71,18 @@ https://expressjs.com/zh-tw/starter/generator.html
             server.applyMiddleware({app});
             //server.applyMiddleware({app, path: '/gql'}); 
             
+            app.listen({
+                  port: 4000
+            }, () => {
+                  console.log('Apollo Server on http://localhost:4000');
+            });
+            
+            /*app.listen({
+                  port: 4000
+            }, () => {
+                  console.log('Apollo Server on http://localhost:' + 4000 + '/gql');
+            });*/
+            
   5. MongoDB
   
             const morgan = require('morgan');
@@ -83,7 +95,8 @@ https://expressjs.com/zh-tw/starter/generator.html
             // process.env
             let Mongo_PW = 'root';
             let DATABASE_NAME = 'katesdb'
-            let url = 'mongodb://root'+ Mongo_PW + '@localhost:27017/' + DATABASE_NAME + '?authSource=admin';
+            let port = 27017;
+            let url = 'mongodb://root'+ Mongo_PW + '@localhost:'+ port +'/' + DATABASE_NAME + '?authSource=admin';
             console.log('DB name ' + DATABASE_NAME);
 
             // mongoose
@@ -91,10 +104,9 @@ https://expressjs.com/zh-tw/starter/generator.html
               useUnifiedTopology: true,
               useNewUrlParser: true
             }).then(()=>{
-              console.log('DB connect')
+              console.log('DB is connected.')
             }).catch( err =>{
               console.log(err);
             });
-
-
-
+            
+            
