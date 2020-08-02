@@ -20,23 +20,21 @@ https://expressjs.com/zh-tw/starter/generator.html
 
     $express --view=pug kapp
 
-         create : kapp/
-         create : kapp/public/
-         create : kapp/public/javascripts/
-         create : kapp/public/images/
-         create : kapp/public/stylesheets/
-         create : kapp/public/stylesheets/style.css
-         create : kapp/routes/
-         create : kapp/routes/index.js
-         create : kapp/routes/users.js
-         create : kapp/views/
-         create : kapp/views/error.pug
-         create : kapp/views/index.pug
-         create : kapp/views/layout.pug
-         create : kapp/app.js
-         create : kapp/package.json
-         create : kapp/bin/
-         create : kapp/bin/www
+         /app.js
+        
+         /routes/
+               /index.js
+               
+         /views/
+               /index.pug
+               /layout.pug
+               
+         /public/
+         
+         /package.json
+         
+         /bin/
+         /bin/www
 
 2. apollo server 
 
