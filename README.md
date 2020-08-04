@@ -200,3 +200,12 @@ https://github.com/QueenieCplusplus/Backend_Script/blob/master/Security/dataLimi
 限制查詢深度
 
 限制查詢複雜度
+
+# upload File & Photo 上傳檔案與照片
+
+   * apollo-upload-client 在瀏覽器上捕捉檔案，藉由操作，傳給伺服器。
+     
+   * apollo-upload-server 免加載，已內建伺服器端，處理由 client 端傳送檔案給伺服器端，可捕捉 stream、mimetype，處理 encode 編碼。
+     
+     
+   https://github.com/QueenieCplusplus/Backend_Script/tree/master/-Nodejs/Upload-master
