@@ -8,7 +8,7 @@ var router = express.Router();
 
 router.get('/', function(req, res){
 
-   res.send('This Is <b>Kates nodejs<b>');
+   res.end('This Is <b>Kates nodejs<b>');
  }
 )
 
