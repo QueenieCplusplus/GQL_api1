@@ -182,3 +182,21 @@ Mongoose.Connect(url,...) 來讓 app 和 DB 建立連線，爾後將此 url 連�
            )
        
        )
+
+# githubAuth Codebase 第三方登入功能
+
+https://github.com/QueenieCplusplus/Backend_Script/tree/master/Auth
+
+# Security 安全性
+
+* request timeout 避免大量或者惡意的查詢。
+
+https://github.com/QueenieCplusplus/Backend_Script/blob/master/Security/timeout.js
+
+* max size 限制上傳資料的大小。
+
+https://github.com/QueenieCplusplus/Backend_Script/blob/master/Security/dataLimit.js
+
+限制查詢深度
+
+限制查詢複雜度
