@@ -1,9 +1,14 @@
+
+# Web Server (api) + DB server (cloud)
+
+  https://github.com/QueenieCplusplus/Github_Auth_API/blob/master/README.md#web-server--db-server
+
 # GQL_api
 Backend using express framework
 
 ref doc:
 
-https://medium.com/@charming_rust_oyster_221/node-js-express-安裝設置與簡單實作-5920e1d70d9d
+  https://medium.com/@charming_rust_oyster_221/node-js-express-安裝設置與簡單實作-5920e1d70d9d
 
 npm install:
 
